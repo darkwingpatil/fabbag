@@ -102,3 +102,97 @@ function display()
 }
 
 setInterval(nxtbut,4000)
+
+
+//creating grid for conatiner
+var obj=[
+    {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-1_2048x.gif?v=1643868533",
+    txt:"Teen Teen Ceremonial Makeup 8 Color Eyeshadow Kit of your choice!"},
+    {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-2_2048x.gif?v=1644038367",
+    txt:"Teen Trendz 5 in 1 Matte Me Lipstick of your choice!*"},
+    {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-3_e2e96c00-a738-495f-8fc2-9f7731a87428_2048x.png?v=1644206990",
+    txt:"Coco Soul Nourishing Body Lotion"},
+    {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-4_f8878074-f488-4f6b-848d-898f1f848d2d_2048x.png?v=1644395327",
+    txt:"The Soap Company India Saffron Soothing Sorbet"},
+
+]
+console.log(obj)
+obj.map(function(ele,ind,arr){
+    var conts=document.createElement("div");
+    var image=document.createElement("img");
+    image.setAttribute("src",ele.imge);
+    image.setAttribute("class","a2");
+    var tex=document.createElement("p");
+    tex.innerText=ele.txt;
+    conts.append(image,tex);
+    document.getElementById("istconatiner").append(conts)
+})
+
+var btn11=document.createElement("button");
+btn11.setAttribute("id","btn11");
+btn11.setAttribute("class","fas fa-less-than")
+btn11.addEventListener("click",function(){
+    next11();
+})
+var btn22=document.createElement("button");
+btn22.setAttribute("id","btn22");
+btn22.setAttribute("class","fas fa-greater-than")
+btn22.addEventListener("click",function(){
+    prev11()
+})
+document.getElementById("istconatiner").append(btn11,btn22)
+
+
+
+
+var count1=1;
+
+function next11()
+{
+    if(count1==1)
+    {
+        count1=4;
+    }
+    count1=count1-3;
+    console.log(count1)
+    display1()
+}
+
+function prev11()
+{
+    if(count1==4)
+    {
+        count1=1;
+    }
+    count1=count1+3;
+    console.log(count1)
+    display1()
+}
+
+function display1()
+{
+    var x1=document.querySelectorAll("#istconatiner>div")[0];
+    var x2=document.querySelectorAll("#istconatiner>div")[3];
+    console.log(x1)
+    console.log(x2)
+
+    for(var i=0;i<1;i++)
+    {
+        if(count1==4)
+        {
+            x1.style.display="none";
+            x2.style.display="block";
+        }
+        else if(count1==1)
+        {
+            x2.style.display="none";
+            x1.style.display="block";
+        }
+    }
+}
+
+// setInterval(next11,3000);
+// setInterval(prev11,6000)
+
+
+
