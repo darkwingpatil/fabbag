@@ -1,0 +1,12 @@
+#navbar{
+    height:50px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#box>i{
+    padding-right: 10px;
+    font-size: small;
+    color: #e5b95f;
+}
