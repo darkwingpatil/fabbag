@@ -194,5 +194,162 @@ function display1()
 // setInterval(next11,3000);
 // setInterval(prev11,6000)
 
+var data = [
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966",
+        name:"Jan'22 Beauty Resolution Fab Bag",
+        
+        price:"from Rs.599.00",
+        strikedOffPrice:"",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3.gif?v=1638191014",
+        name:"Dec'21 The X-Must Haves Fab Bag",
+        strikedOffPrice:"",
+        price:"from Rs.599.00",
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
+        name:"Nov'21 The Diva-Li-coius Fab Bag",
+        
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4.png?v=1633952538",
+        name:"Oct'21 The Re-Treat Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed.png?v=1631337975",
+        name:"Sep'21 The She-9-lgans Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product.gif?v=1629009087",
+        name:"Aug'21 The Lash & Line Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    }
+];
+
+ data.map(function(elem){
+    var div111=document.createElement("div");
+
+    var photo=document.createElement("img");
+    photo.setAttribute("src",elem.imgUrl);
+    photo.setAttribute("class","pick");
+
+
+    var name= document.createElement("p");
+    name.innerText=elem.name;
+
+    var innerdiv111=document.createElement("p");
+    var paisa= document.createElement("p");
+    paisa.innerText=elem.price; 
+    var strikepaisa= document.createElement("p");
+    strikepaisa.innerText=elem.strikedOffPrice;
+    strikepaisa.style.textDecoration="line-through"
+    innerdiv111.append(paisa,strikepaisa);
+    innerdiv111.setAttribute("class","pricediv")
+    div111.append(photo,name,innerdiv111);
+    document.getElementById("bagscont").append(div111);
+ })
+
+ var btn31=document.createElement("button");
+var i1=document.createElement("i");
+i1.setAttribute("class","fas fa-less-than");
+btn31.append(i1);
+btn31.setAttribute("id","button5")
+btn31.addEventListener("click",function(){
+    prev22();
+})
+var btn32=document.createElement("button5");
+btn32.setAttribute("id","button6")
+btn32.addEventListener("click",function(){
+    next22()
+})
+var i2=document.createElement("i");
+i2.setAttribute("class","fas fa-greater-than");
+btn32.append(i2);
+document.querySelector("#bagscont").append(btn31,btn32);
+
+
+
+var count12=1;
+
+function prev22(){
+    if(count12==1)
+    {
+        count12=6;
+    }
+    else if(count12==6)
+    {
+        count12=5;
+    }
+    else if(count12==5)
+    {
+        count12=count12-4;
+    }
+    console.log(count12);
+    display2();
+}
+
+function next22(){
+    if(count12==6)
+    {
+        count12=1;
+    }
+    else if(count12==1)
+    {
+        count12=5;
+    }
+    else if(count12==5)
+    {
+        count12=count12+1;
+    }
+    display2();
+    console.log(count12);
+}
+
+function display2()
+{
+    var xx0=document.querySelectorAll("#bagscont>div")[0];
+    console.log(xx1);
+    var xx1=document.querySelectorAll("#bagscont>div")[1];
+    var xx5=document.querySelectorAll("#bagscont>div")[4];
+    var xx6=document.querySelectorAll("#bagscont>div")[5];
+
+
+    for(var i=0;i<3;i++)
+    {
+        if(count12==1)
+        {
+            xx0.style.display="block";
+            xx1.style.display="block";
+            xx5.style.display="none";
+            xx6.style.display="none";
+        }
+        else if(count12==5)
+        {
+            xx0.style.display="none";
+            xx1.style.display="block";
+            xx5.style.display="block";
+            xx6.style.display="none";
+        }
+        else if(count12==6)
+        {
+            xx0.style.display="none";
+            xx1.style.display="none";
+            xx5.style.display="block";
+            xx6.style.display="block";
+        }
+    }
+
+
+}
 
 

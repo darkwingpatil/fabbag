@@ -220,6 +220,64 @@ text-align: center;
     background-color: #e5b95f;
 }
 
+#late{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+#bagscont{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:auto;
+    gap:20px;
+    width:60%;
+    margin:auto;
+    margin-top: 10px;
+    position: relative;
+}
+#button5{
+    height:30px;
+    width:30px;
+    position: absolute;
+    left:0%;
+    top:23%;
+    background: transparent;
+    border: none;
+    font-size: large;
+    color:grey;
+    cursor: pointer;
+}
+#button6{
+    height:30px;
+    width:30px;
+    position: absolute;
+    right:0%;
+    top:23%;
+    background: transparent;
+    font-size: larger;
+    color:grey;
+    border: none;
+    cursor: pointer;
+}
+.pick{
+    height:170px;
+    width:100%;
+}
+
+#bagscont>div{
+    /* border: 1px solid red; */
+}
+
+.pricediv{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#bagscont>div:nth-child(5),#bagscont>div:nth-child(6){
+    display: none;
+}
+
+
 @media all and (min-width:600px) and (max-width:828px)
 {
     #istconatiner{
