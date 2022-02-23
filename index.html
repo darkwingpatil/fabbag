@@ -5,12 +5,157 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./index.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <style>
+        #container{
+            padding-top: 30px;
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            grid-template-rows:100%; 
+            gap:30px; 
+            margin:auto;
+            justify-content:center;
+            color:light black;
+            position:relative;
+}
+#container>div:nth-child(5),#container>div:nth-child(6){
+    display:none;
+}
+
+#button5{
+    position:absolute;
+    height:30px;
+    width:30px;
+    left:0%;
+    top:23%;
+}
+#button6{
+    position:absolute;
+    height:30px;
+    width:30px;
+    right:0%;
+    top:23%;
+}
+        .head{
+font-size: 25px;
+
+font-weight: 30px;
+text-align:center;
+        }
+        .ptag{
+            height:3px;
+            width:18%;
+            background-color:yellow;
+            margin:auto;
+        }
+         .pick{
+            height:40%;
+            width:100%;
+         
+            
+        } 
+        .pricediv{
+            display:flex;
+            justify-content:space-around;
+            margin:right;
+        }
+    </style>
 </head>
 <body>
-    <div id="navbar">
+    <h1 class="head">PREVIOUS BAGS</h1>
+    <p class="ptag"></p>
+    <div id="container">
+
     </div>
-</body>
 </html>
-<script src="./index.js"></script>
+<script>
+    
+
+
+
+
+    var data = [
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966",
+        name:"Jan'22 The Beauty Resolution Fab Bag",
+        
+        price:"from Rs.599.00",
+        strikedOffPrice:"",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3.gif?v=1638191014",
+        name:"Dec'21 The X-Must Haves Fab Bag",
+        strikedOffPrice:"",
+        price:"from Rs.599.00",
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
+        name:"Nov'21 The Diva-Li-coius Fab Bag",
+        
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4.png?v=1633952538",
+        name:"Oct'21 The Re-Treat Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed.png?v=1631337975",
+        name:"Sep'21 The She-9-lgans Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product.gif?v=1629009087",
+        name:"Aug'21 The Lash & Line Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    }
+];
+
+data.map(function(elem){
+    var div=document.createElement("div");
+
+    var photo=document.createElement("img");
+    photo.setAttribute("src",elem.imgUrl);
+    photo.setAttribute("class","pick");
+
+
+    var name= document.createElement("h3");
+    name.innerText=elem.name;
+    
+    var innerdiv=document.createElement("p");
+
+;
+
+    var paisa= document.createElement("h2");
+    paisa.innerText=elem.price; 
+     
+    var strike= document.createElement("h3");
+    strike.innerText=elem.strikedOffPrice;
+    strike.style.textDecoration="line-through"
+    innerdiv.append(strike,paisa);
+    innerdiv.setAttribute("class","pricediv")
+    div.append(photo,name,innerdiv);
+    
+document.querySelector("#container").append(div);
+
+})
+var button1=document.createElement("button");
+var i1=document.createElement("i");
+i1.setAttribute("class","fas fa-less-than");
+button1.append(i1);
+button1.setAttribute("id","button5")
+var button2=document.createElement("button5");
+button2.setAttribute("id","button6")
+var i2=document.createElement("i");
+i2.setAttribute("class","fas fa-greater-than");
+button2.append(i2);
+document.querySelector("#container").append(button1,button2);
+var value44=1;
+
+
+</script>
