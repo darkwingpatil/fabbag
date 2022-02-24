@@ -49,6 +49,22 @@
     border: none;
     /* border-bottom: 1px solid black; */
 }
+
+#filteredres{
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
+    display: none;
+    position: absolute;
+    gap:10px;
+    /* added just now */
+    height:200px;
+    width:400px;
+    background-color: white;
+    z-index: 2;
+    left:5%;
+    top:50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 #box>i{
     padding-right: 10px;
     font-size: small;

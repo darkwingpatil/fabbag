@@ -147,6 +147,7 @@ function search()
 {
     document.getElementById("bigersearch").style.display="block";
     document.getElementById("navbar").style.display="none";
+    local();
 }
 
 document.getElementById("toclose").addEventListener("click",function(){
@@ -361,8 +362,76 @@ function display2()
 
 }
 
+document.getElementById("seaa").addEventListener("click",function(){
+    check();
+});
+
+
+function check()
+{
+    var xxx=document.getElementById("searchbar").value;
+    console.log(xxx=="");
+
+    if(xxx!="")
+    {
+        document.getElementById("filteredres").style.display="block";
+    }
+    else
+    {
+        document.getElementById("filteredres").style.display="none";
+    }
+
+    var latestdat=data1.filter(function(ele,ind,arr){
+        return ele.name.includes(xxx);
+    })
+
+    console.log(latestdat)
+
+    //displayfil(latestdat)
+
+    if(xxx!="" && latestdat.length<6)
+    {
+       displayfil(latestdat)
+    }
+
+}
+
+
+
+function displayfil(latestdat)
+{
+    document.getElementById("filteredres").innerHTML="";
+    latestdat.map(function(elem,ind,arr){
+        var filbox=document.createElement("div");
+        filbox.style.display="flex";
+        filbox.style.justifyContent="space-between";
+        var photo=document.createElement("img");
+        photo.setAttribute("src",elem.imgUrl);
+        photo.style.width="35px";
+        photo.style.height="20px";
+        photo.style.padding="8px";
+        var name= document.createElement("p");
+        name.innerText=elem.name;
+        name.style.fontSize="12px";
+        var innerdiv111=document.createElement("div");
+        innerdiv111.style.display="flex";
+        innerdiv111.append(photo,name)
+        var innerdiv222=document.createElement("div");
+        innerdiv222.style.display="flex";
+        var paisa= document.createElement("p");
+        paisa.innerText=elem.price; 
+        paisa.style.fontSize="12px";
+        innerdiv222.append(paisa)
+        filbox.append(innerdiv111,innerdiv222);
+        document.getElementById("filteredres").append(filbox)
+
+    })
+}
+
+
 
 //creating a local storage of all products
+
 
 
 var data1 = [
@@ -372,18 +441,21 @@ var data1 = [
         
         price:"from Rs.599.00",
         strikedOffPrice:"",
+        qty:1,
         
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3.gif?v=1638191014",
         name:"Dec'21 The X-Must Haves Fab Bag",
         strikedOffPrice:"",
         price:"from Rs.599.00",
+        qty:1,
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
         name:"Nov'21 The Diva-Li-coius Fab Bag",
         
         strikedOffPrice:"Rs 1797.00",
         price:"from Rs.599.00",
+        qty:1,
         
     },
     {
@@ -391,20 +463,37 @@ var data1 = [
         name:"Oct'21 The Re-Treat Fab Bag",
         strikedOffPrice:"Rs 1797.00",
         price:"from Rs.599.00",
+        qty:1,
         
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed.png?v=1631337975",
         name:"Sep'21 The She-9-lgans Fab Bag",
         strikedOffPrice:"Rs 1797.00",
         price:"from Rs.599.00",
+        qty:1,
         
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product.gif?v=1629009087",
         name:"Aug'21 The Lash & Line Fab Bag",
         strikedOffPrice:"Rs 1797.00",
         price:"from Rs.599.00",
+        qty:1,
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal-2.gif?v=1644395072",
+        name:"The Colour Me Cupid February Fab Bag",
+        strikedOffPrice:"Rs. 599.00",
+        price:"from Rs.599.00",
+        qty:1,
         
     }
 ];
-console.log("hello")
+function local()
+{
+ localStorage.setItem("productlist",JSON.stringify(data1));
+};
+
+
+
+
 
