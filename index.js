@@ -44,3 +44,4 @@ i4.addEventListener("click",function(){
 })
 
 document.getElementById("navbar").append(subscrib,image,box)
+console.log("HELLOW");
