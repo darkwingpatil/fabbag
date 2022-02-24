@@ -20,6 +20,7 @@ var box=document.createElement("div");
 box.setAttribute("id","box")
 var i1=document.createElement("i");
 i1.setAttribute("class","fas fa-search");
+i1.style.cursor="pointer";
 i1.addEventListener("click",function(){
     search()
 })
@@ -142,7 +143,15 @@ btn22.addEventListener("click",function(){
 })
 document.getElementById("istconatiner").append(btn11,btn22)
 
+function search()
+{
+    document.getElementById("bigersearch").style.display="block";
+    document.getElementById("navbar").style.display="none";
+}
 
+document.getElementById("toclose").addEventListener("click",function(){
+document.getElementById("bigersearch").style.display="none";
+document.getElementById("navbar").style.display="flex";})
 
 
 var count1=1;
@@ -352,4 +361,49 @@ function display2()
 
 }
 
+
+//creating a local storage of all products
+
+
+var data1 = [
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966",
+        name:"Jan'22 Beauty Resolution Fab Bag",
+        
+        price:"from Rs.599.00",
+        strikedOffPrice:"",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3.gif?v=1638191014",
+        name:"Dec'21 The X-Must Haves Fab Bag",
+        strikedOffPrice:"",
+        price:"from Rs.599.00",
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
+        name:"Nov'21 The Diva-Li-coius Fab Bag",
+        
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4.png?v=1633952538",
+        name:"Oct'21 The Re-Treat Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed.png?v=1631337975",
+        name:"Sep'21 The She-9-lgans Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product.gif?v=1629009087",
+        name:"Aug'21 The Lash & Line Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    }
+];
 
