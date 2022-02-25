@@ -347,6 +347,23 @@ text-align: center;
     display: none;
 }
 
+#footer{
+    padding-top: 30px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:100%; 
+    gap:30px; 
+    margin:auto;
+    margin-top:20px;
+    margin-left: 30px;
+    padding-left:3opx;
+    background-color: aliceblue;
+}
+
+  #class{ 
+    color:white;
+      background-color: blue;
+  }
 
 @media all and (min-width:600px) and (max-width:828px)
 {
