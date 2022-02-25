@@ -548,7 +548,7 @@ document.getElementById("navbar").append(subscrib,image,box)
     document.getElementById("bagscont1").append(div111);
  })
 
- var btn31=document.createElement("button");
+var btn31=document.createElement("button");
 var i1=document.createElement("i");
 i1.setAttribute("class","fas fa-less-than");
 btn31.append(i1);
@@ -556,7 +556,7 @@ btn31.setAttribute("id","button5")
 btn31.addEventListener("click",function(){
     prev22();
 })
-var btn32=document.createElement("button5");
+var btn32=document.createElement("button");
 btn32.setAttribute("id","button6")
 btn32.addEventListener("click",function(){
     next22()
@@ -565,8 +565,27 @@ var i2=document.createElement("i");
 i2.setAttribute("class","fas fa-greater-than");
 btn32.append(i2);
 document.querySelector("#bagscont").append(btn31,btn32);
-document.querySelector("#bagscont1").append(btn31,btn32);
+//document.querySelector("#bagscont1").append(btn31,btn32);
 
+
+var btn311=document.createElement("button");
+var i11=document.createElement("i");
+i11.setAttribute("class","fas fa-less-than");
+btn311.append(i11);
+btn311.setAttribute("id","button5")
+btn311.addEventListener("click",function(){
+    prev22();
+})
+var btn322=document.createElement("button");
+btn322.setAttribute("id","button6")
+btn322.addEventListener("click",function(){
+    next22()
+})
+var i22=document.createElement("i");
+i22.setAttribute("class","fas fa-greater-than");
+btn322.append(i22);
+//document.querySelector("#bagscont").append(btn31,btn32);
+document.querySelector("#bagscont1").append(btn311,btn322);
 
 var count12=1;
 
