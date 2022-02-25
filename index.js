@@ -47,7 +47,7 @@ var i4=document.createElement("i");
 i4.setAttribute("class","fas fa-shopping-cart");
 box.append(i4)
 i4.addEventListener("click",function(){
-    addtocart()
+    addtocart11()
 })
 
 document.getElementById("navbar").append(subscrib,image,box)
@@ -114,13 +114,13 @@ setInterval(nxtbut,4000)
 //creating grid for conatiner
 var obj=[
     {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-1_2048x.gif?v=1643868533",
-    txt:"Teen Teen Ceremonial Makeup 8 Color Eyeshadow Kit of your choice!"},
+    txt:"Teen Teen Ceremonial Makeup 8 Color Eyeshadow Kit of your choice!",name:"The Colour Me Cupid February Fab Bag"},
     {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-2_2048x.gif?v=1644038367",
-    txt:"Teen Trendz 5 in 1 Matte Me Lipstick of your choice!*"},
+    txt:"Teen Trendz 5 in 1 Matte Me Lipstick of your choice!*",name:"The Colour Me Cupid February Fab Bag"},
     {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-3_e2e96c00-a738-495f-8fc2-9f7731a87428_2048x.png?v=1644206990",
-    txt:"Coco Soul Nourishing Body Lotion"},
+    txt:"Coco Soul Nourishing Body Lotion",name:"The Colour Me Cupid February Fab Bag"},
     {imge:"https://cdn.shopify.com/s/files/1/0052/7551/6995/files/What_s-In-The-Bag-4_f8878074-f488-4f6b-848d-898f1f848d2d_2048x.png?v=1644395327",
-    txt:"The Soap Company India Saffron Soothing Sorbet"},
+    txt:"The Soap Company India Saffron Soothing Sorbet",name:"The Colour Me Cupid February Fab Bag"},
 
 ]
 console.log(obj)
@@ -129,6 +129,9 @@ obj.map(function(ele,ind,arr){
     var image=document.createElement("img");
     image.setAttribute("src",ele.imge);
     image.setAttribute("class","a2");
+    image.addEventListener("click",function(){
+        addtocart(ele.name)
+    })
     var tex=document.createElement("p");
     tex.innerText=ele.txt;
     conts.append(image,tex);
@@ -272,9 +275,12 @@ var data = [
     innerdiv111.append(paisa,strikepaisa);
     innerdiv111.setAttribute("class","pricediv")
     div111.append(photo,name,innerdiv111);
+    div111.addEventListener("click",function(){
+        addtocart(elem.name)
+    })
     document.getElementById("bagscont").append(div111);
  })
-
+ 
  var btn31=document.createElement("button");
 var i1=document.createElement("i");
 i1.setAttribute("class","fas fa-less-than");
@@ -475,9 +481,62 @@ function openpdp(ele)
     localStorage.setItem("mypdp",JSON.stringify(pdparr));
     window.location.href="./searchpdp.html";
 }
+// var cartarr=JSON.parse(localStorage.getItem("thismycart"))||[];
+var cartarr=JSON.parse(localStorage.getItem("thismycart"))||[];
+function addtocart(ele)
+{
+    //console.log(ele);
+    var x=ele;
+    // var output22=data1.filter(function(ele,ind,arr){
+    //     return ele.name.includes(x);
+    // })
+    var output22=0;
+    for(var i=0;i<data1.length;i++)
+    {
+        if(x==data1[i].name)
+        {
+            output22=data1[i];
+        }
+    }
+    console.log(output22);
+    cartarr.push(output22)
+    console.log(cartarr)
+    localStorage.setItem("thismycart",JSON.stringify(cartarr));
+    displaycart()
+}
 
+function displaycart()
+{
+    cartarr.map(function(ele,ind,arr){
+        var box33=document.createElement("div");
+        var box331=document.createElement("div");
+        var img33=document.createElement("img");
+        img33.setAttribute("src",ele.imgUrl);
+        img33.style.width="55px";
+        img33.style.height="35px";
+        img33.style.padding="8px";
+        box331.append(img33);
+        var box332=document.createElement("div");
+        var name= document.createElement("p");
+        name.innerText=ele.name;
+        name.style.fontSize="15px";
+        var box333=document.createElement("div");
+        var qunty=document.createElement("p");
+        qunty.innerText="Qty:"+ele.qty;
+        qunty.style.fontSize="15px";
+        var price=document.createElement("p");
+        price.innerText="Rs"+ele.price;
+        price.style.fontSize="15px";
+        box333.append(qunty,price);
+        box333.style.display="flex";
+        box332.append(name,box333);
+        box33.append(box331,box332)
+        box33.style.display="flex";
+        document.getElementById("addingtocart").append(box33);
+        console.log("hello")
 
-
+    })
+}
 //creating a local storage of all products
 
 
@@ -487,7 +546,7 @@ var data1 = [
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966",
         name:"Jan'22 Beauty Resolution Fab Bag",
         
-        price:"from Rs.599.00",
+        price:599.00,
         strikedOffPrice:"",
         qty:1,
         
@@ -495,14 +554,14 @@ var data1 = [
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3.gif?v=1638191014",
         name:"Dec'21 The X-Must Haves Fab Bag",
         strikedOffPrice:"",
-        price:"from Rs.599.00",
+        price:599.00,
         qty:1,
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
         name:"Nov'21 The Diva-Li-Coius Fab Bag",
         
         strikedOffPrice:"Rs 1797.00",
-        price:"from Rs.599.00",
+        price:599.00,
         qty:1,
         
     },
@@ -510,28 +569,28 @@ var data1 = [
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4.png?v=1633952538",
         name:"Oct'21 The Re-Treat Fab Bag",
         strikedOffPrice:"Rs 1797.00",
-        price:"from Rs.599.00",
+        price:599.00,
         qty:1,
         
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed.png?v=1631337975",
         name:"Sep'21 The She-9-lgans Fab Bag",
         strikedOffPrice:"Rs 1797.00",
-        price:"from Rs.599.00",
+        price:599.00,
         qty:1,
         
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product.gif?v=1629009087",
         name:"Aug'21 The Lash & Line Fab Bag",
         strikedOffPrice:"Rs 1797.00",
-        price:"from Rs.599.00",
+        price:599.00,
         qty:1,
         
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal-2.gif?v=1644395072",
         name:"The Colour Me Cupid February Fab Bag",
         strikedOffPrice:"Rs. 599.00",
-        price:"from Rs.599.00",
+        price:599.00,
         qty:1,
         
     }
