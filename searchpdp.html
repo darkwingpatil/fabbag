@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+    #navbar{
+    height:50px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#box>i{
+    padding-right: 10px;
+    font-size: small;
+    color: #e5b95f;
+}
+img{
+    cursor: pointer;
+}
+
+        #bidcontainer{
+            display: flex;
+            justify-content: center;
+            width:80%;
+            margin: auto;
+        }
+        #lowerdiv{
+            width:50%;
+            margin: auto;
+            margin-top: 100px;
+            
+        }
+        button{
+            border-radius: 20px;
+            margin-left: 20px;
+            height:40px;
+            border: none;
+            background: white;
+        }
+        button:hover{
+            border-radius: 20px;
+            background-color: orange;
+            cursor: pointer;
+        }
+        #showcontent{
+            width:70%;
+            margin: auto;
+            margin-top: 50px;
+        }
+        p{
+            font-size: 15px;
+        }
+
+    #forall{
+        display:flex;
+   }
+   #forall>div:nth-child(2),#forall>div:nth-child(3),#forall>div:nth-child(4)
+   {
+       display: none;
+   }
+    #ndconatiner{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(5,80px);
+    width: 60%;
+    margin: auto;
+    gap: 20px;
+    grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i"
+    "g h i"
+    "j k l" ;
+}
+#ndconatiner>div{
+    border: 1px solid rgb(214, 207, 207);
+}
+
+#ndconatiner>div:nth-child(1)
+{
+    grid-area: a;
+}
+#ndconatiner>div:nth-child(2)
+{
+    grid-area: b;
+}
+#ndconatiner>div:nth-child(3)
+{
+    grid-area: c;
+}
+#ndconatiner>div:nth-child(4)
+{
+    grid-area: d;
+}
+#ndconatiner>div:nth-child(5)
+{
+    grid-area: e;
+}
+#ndconatiner>div:nth-child(6)
+{
+    grid-area: f;
+}
+#ndconatiner>div:nth-child(7)
+{
+    grid-area: g;
+}
+#ndconatiner>div:nth-child(8)
+{
+    grid-area: h;
+}
+#ndconatiner>div:nth-child(9)
+{
+    grid-area: i;
+}
+#ndconatiner>div:nth-child(10)
+{
+    grid-area: j;
+}
+#ndconatiner>div:nth-child(11)
+{
+    grid-area: k;
+}
+#ndconatiner>div:nth-child(12)
+{
+    grid-area: l;
+}
+
+#ndconatiner>div>p:nth-child(1){
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    }
+#ndconatiner>div>p:nth-child(2){
+font-size: 12px;
+text-align: center;
+}
+.strike{
+    display: flex;
+    justify-content: center;
+}
+.strike>p:nth-child(1){
+    font-weight: bold;
+}
+.strike>p:nth-child(2){
+    text-decoration: line-through;
+}
+
+#ndconatiner>div:nth-child(7)>p:nth-child(1),#ndconatiner>div:nth-child(8)>p:nth-child(1),#ndconatiner>div:nth-child(9)>p:nth-child(1){
+    font-size:12px;
+    color: #e5b95f;
+}
+
+#ndconatiner>div:nth-child(7)>p:nth-child(2){
+    font-size:15px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+.lwbtn{
+    background-color:#e5b95f ;
+    border-color: white;
+    color: white;
+    width:80%;
+    height:30%;
+}
+.last{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5b95f;
+}
+
+#bagscont{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:auto;
+    gap:20px;
+    width:60%;
+    margin:auto;
+    margin-top: 10px;
+    position: relative;
+}
+#bagscont1{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows:auto;
+    gap:20px;
+    width:60%;
+    margin:auto;
+    margin-top: 10px;
+    position: relative;
+}
+#button5{
+    height:30px;
+    width:30px;
+    position: absolute;
+    left:0%;
+    top:23%;
+    background: transparent;
+    border: none;
+    font-size: large;
+    color:grey;
+    cursor: pointer;
+}
+#button6{
+    height:30px;
+    width:30px;
+    position: absolute;
+    right:0%;
+    top:23%;
+    background: transparent;
+    font-size: larger;
+    color:grey;
+    border: none;
+    cursor: pointer;
+}
+.pick{
+    height:170px;
+    width:100%;
+}
+
+.pricediv{
+    display: flex;
+    justify-content: flex-start;
+}
+
+#bagscont>div:nth-child(5),#bagscont>div:nth-child(6){
+    display: none;
+}
+#bagscont1>div:nth-child(5),#bagscont1>div:nth-child(6){
+    display: none;
+}
+#returnpol,#returnpol1{
+    width:80%;
+    margin:auto;
+}
+#lis{
+    width:60%;
+    margin: auto;
+    margin-top: 50px;
+}
+.lii{
+    font-size:14px;
+}
+
+#onlyrev{
+    display: flex;
+    justify-content: space-between;
+    width:60%;
+    margin: auto;
+}
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+    </div>
+    <div id="bidcontainer">
+    </div>
+    <div id="lowerdiv">
+        <button id="show1" onclick="show1()">DESCRIPTION</button>
+        <button id="show2" onclick="show2()">VIEW PLANS</button>
+        <button id="show3" onclick="show3()">RETURN POLICY</button>
+        <button id="show4" onclick="show4()">CUSTOMER REVIEWS</button>
+    </div>
+    <div id="forall">
+    <div id="showcontent">
+        <p>Get ready to wink and woo the world with the Lash & Line August Fab Bag filled with 2 full-size eye-defining makeup & 4 must-have beauty essentials.</p>
+        <br>
+        <p>Here's what you can expect inside your August Fab Bag - essentials worth over 1800/- including:</p>
+        <ul>
+            <li>SUGAR Wonder Woman 24 HR Lip Lacquer of your choice!*</li>
+            <li>Coco Soul Hair and Scalp Cleanser/Shampoo</li>
+            <li>Palmer's Hair Style Hold</li>
+            <li>Baiser India Nourishing Lip Oil</li>
+        </ul>
+        <p>*Two offers cannot be clubbed. Makeup choice will be available on the order confirmation page, on a first-come, first-served basis. Bonus product will be customized by the Fab Bag Crew.</p>
+        <p>FAB BAG delivers the best of beauty and makeup products once a month, customized just for you.</p>
+    </div>
+    <div id="ndconatiner">
+        <div>
+            <p>1 MONTH</p>
+            <p>SUBSCRIPTION</p>
+        </div>
+        <div>
+            <p>3 MONTH</p>
+            <p>SUBSCRIPTION</p>
+        </div>
+        <div>
+            <p>6 MONTH</p>
+            <p>SUBSCRIPTION</p>
+        </div>
+        <div>
+            <p>RS 399.00</p>
+            <p>/ Per month</p>
+        </div>
+        <div>
+            <p>RS 533.00</p>
+            <p>/ Per month</p>
+        </div>
+        <div> 
+            <p>RS 483.00</p>
+            <p>/ Per month</p>
+        </div>
+        <div>
+            <p>ONE TIME PAYMENT</p>
+            <p>RS 599.00</p>
+        </div>
+        <div>
+            <p>ONE TIME PAYMENT(11% OFF)</p>
+            <div class="strike">
+                <p>RS 1,599.00</p>
+                <p>Rs 1,797</p>
+            </div>   
+        </div>
+        <div>
+            <p>ONE TIME PAYMENT(19% OFF)</p>
+            <div class="strike">
+                <p>RS 2,899.00</p>
+                <p>Rs 3,594</p>
+            </div>
+            <hr>
+            <div style="display:flex;justify-content: space-around;">
+                <p style="padding:0 50px">image</p>
+                <p style="color:red">SIGNUP BONOUS</p>
+                <p style="font-size:small;padding-top:3%;">Free</p>
+            </div>
+        </div>
+        <div class="last"><button class="lwbtn">ADD TO CART</button></div>
+        <div class="last"><button class="lwbtn">ADD TO CART</button></div>
+        <div class="last" style="height:60px;"><button class="lwbtn">ADD TO CART</button></div>
+    </div>
+    <div id="returnpol">
+        <div id="lis">
+        <li class="lii">Returns Policy for FAB BAG Monthly Subscriptions: 100% Happiness or Money-Back Guarantee</li>
+        <li class="lii">For more details, please see our Policy<a href="https://www.fabbag.com/pages/returns-and-refunds" target="_blank" style="color:#e5b95f">here.</a></li>
+        <li class="lii">Should you have any questions regarding this product, please feel free to get in touch with our friendly Customer Experience Team at crew@fabbag.com within 48 hours of receiving the shipment or call us at 022-4896-7878 Mon - Fri, 9am - 7pm.</li>
+        </div>
+        <div>
+            <h3 style="text-align:center; margin-top:50px;">Related Products</h3>
+        </div>
+        <div id="bagscont">
+            
+        </div>
+    </div>
+    <div id="returnpol1">
+        <h4 style="text-align:center;">Customer Reviews</h4>
+        <div id="onlyrev">
+            <p>No reviews yet</p>
+            <p><a href="https://www.fabbag.com/collections/previous-bags/products/the-beauty-resolution-january-fab-bag?_pos=1&_sid=3159fe0b6&_ss=r#" target="_blank" style="color:#e5b95f">write a review</a></p>
+        </div>     
+        <div>
+           <h3 style="text-align:center; margin-top:50px;">Related Products</h3>
+        </div>
+        <div id="bagscont1">
+            
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+<script>
+
+var subscrib=document.createElement("div");
+subscrib.innerText="SUBSCRIBE NOW";
+subscrib.style.color="#e5b95f";
+subscrib.style.fontSize="12px";
+subscrib.style.fontWeight="900"
+subscrib.style.letterSpacing="-0.5px"
+subscrib.style.fontFamily="poppins";
+subscrib.style.cursor="pointer";
+subscrib.addEventListener("click",function(){
+    window.location.href="https://www.fabbag.com/products/subscribe?variant=39697212768302";
+})
+
+
+var image=document.createElement("img");
+image.setAttribute("src","https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289");
+image.style.height="30px";
+image.style.width="120.56px";
+image.addEventListener("click",function(){
+    window.location.href="./index.html";
+})
+
+
+var box=document.createElement("div");
+box.setAttribute("id","box")
+var i1=document.createElement("i");
+i1.setAttribute("class","fas fa-search");
+i1.style.cursor="pointer";
+i1.addEventListener("click",function(){
+    search()
+})
+box.append(i1)
+var i2=document.createElement("i");
+i2.setAttribute("class","far fa-heart");
+i2.addEventListener("click",function(){
+    wishlist()
+})
+box.append(i2)
+var i3=document.createElement("i");
+i3.setAttribute("class","far fa-user-circle");
+box.append(i3)
+i3.addEventListener("mouseover",function(){
+    dropdown()
+})
+var i4=document.createElement("i");
+i4.setAttribute("class","fas fa-shopping-cart");
+box.append(i4)
+i4.addEventListener("click",function(){
+    addtocart()
+})
+
+document.getElementById("navbar").append(subscrib,image,box)
+    var pdpitems=JSON.parse(localStorage.getItem("mypdp"));
+    //console.log(pdpitems)
+    console.log(pdpitems[pdpitems.length-1].imgUrl);
+    console.log(pdpitems[pdpitems.length-1].name)
+    display(pdpitems)
+    function display(pdpitems)
+    {
+        document.getElementById("bidcontainer").innerHTML="";
+        //console.log(pdpitems[pdpitems-1]);
+        var box1=document.createElement("div");
+        var img=document.createElement("img");
+        img.setAttribute("src",pdpitems[pdpitems.length-1].imgUrl);
+        img.style.width="458.4px";
+        img.style.height="278.2px";
+        box1.append(img);
+        box1.style.margin="13px";
+        var box2=document.createElement("div");
+        box2.style.marginLeft="50px";
+        var pp=document.createElement("p");
+        pp.style.fontSize="14px";
+        pp.innerText="Home / Previous Bags";
+        var h33=document.createElement("h3");
+        h33.style.fontSize="34px";
+        h33.innerText=pdpitems[pdpitems.length-1].name;
+        var price=document.createElement("p");
+        price.innerText="Rs. 599.00";
+        price.style.marginTop="20px";
+        price.style.fontSize="30px";
+        var pp1=document.createElement("p");
+        pp1.innerText="New Year calls for All New Beauty! Discover 4 makeup & skincare essentials this month from your favorite brands...";
+        pp1.style.fontSize="15px";
+        var bttn=document.createElement("button");
+        bttn.innerText="UNAVILABLE";
+        bttn.style.width="652px";
+        bttn.style.height="41px";
+        bttn.style.background="#ea7544";
+        bttn.style.color="white";
+        box2.append(pp,h33,price,pp1,bttn);
+        document.getElementById("bidcontainer").append(box1,box2)
+
+    }
+    var data = [
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-Skincare-Reveal--3.png?v=1641707966",
+        name:"Jan'22 Beauty Resolution Fab Bag",
+        
+        price:"from Rs.599.00",
+        strikedOffPrice:"",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3.gif?v=1638191014",
+        name:"Dec'21 The X-Must Haves Fab Bag",
+        strikedOffPrice:"",
+        price:"from Rs.599.00",
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
+        name:"Nov'21 The Diva-Li-coius Fab Bag",
+        
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },
+    {
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4.png?v=1633952538",
+        name:"Oct'21 The Re-Treat Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare-Reveal-4-5_2faddde5-aa4f-4393-a694-5596034b6fed.png?v=1631337975",
+        name:"Sep'21 The She-9-lgans Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    },{
+        imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner-Skincare--Reveal-Bous-Product.gif?v=1629009087",
+        name:"Aug'21 The Lash & Line Fab Bag",
+        strikedOffPrice:"Rs 1797.00",
+        price:"from Rs.599.00",
+        
+    }
+];
+
+
+ data.map(function(elem){
+    var div111=document.createElement("div");
+
+    var photo=document.createElement("img");
+    photo.setAttribute("src",elem.imgUrl);
+    photo.setAttribute("class","pick");
+
+
+    var name= document.createElement("p");
+    name.innerText=elem.name;
+
+    var innerdiv111=document.createElement("p");
+    var paisa= document.createElement("p");
+    paisa.innerText=elem.price; 
+    var strikepaisa= document.createElement("p");
+    strikepaisa.innerText=elem.strikedOffPrice;
+    strikepaisa.style.textDecoration="line-through"
+    innerdiv111.append(paisa,strikepaisa);
+    innerdiv111.setAttribute("class","pricediv")
+    div111.append(photo,name,innerdiv111);
+    document.getElementById("bagscont").append(div111);
+    //document.getElementById("bagscont1").append(div111);
+ })
+
+ data.map(function(elem){
+    var div111=document.createElement("div");
+
+    var photo=document.createElement("img");
+    photo.setAttribute("src",elem.imgUrl);
+    photo.setAttribute("class","pick");
+
+
+    var name= document.createElement("p");
+    name.innerText=elem.name;
+
+    var innerdiv111=document.createElement("p");
+    var paisa= document.createElement("p");
+    paisa.innerText=elem.price; 
+    var strikepaisa= document.createElement("p");
+    strikepaisa.innerText=elem.strikedOffPrice;
+    strikepaisa.style.textDecoration="line-through"
+    innerdiv111.append(paisa,strikepaisa);
+    innerdiv111.setAttribute("class","pricediv")
+    div111.append(photo,name,innerdiv111);
+    //document.getElementById("bagscont").append(div111);
+    document.getElementById("bagscont1").append(div111);
+ })
+
+var btn31=document.createElement("button");
+var i1=document.createElement("i");
+i1.setAttribute("class","fas fa-less-than");
+btn31.append(i1);
+btn31.setAttribute("id","button5")
+btn31.addEventListener("click",function(){
+    prev22();
+})
+var btn32=document.createElement("button");
+btn32.setAttribute("id","button6")
+btn32.addEventListener("click",function(){
+    next22()
+})
+var i2=document.createElement("i");
+i2.setAttribute("class","fas fa-greater-than");
+btn32.append(i2);
+document.querySelector("#bagscont").append(btn31,btn32);
+//document.querySelector("#bagscont1").append(btn31,btn32);
+
+
+var btn311=document.createElement("button");
+var i11=document.createElement("i");
+i11.setAttribute("class","fas fa-less-than");
+btn311.append(i11);
+btn311.setAttribute("id","button5")
+btn311.addEventListener("click",function(){
+    prev22();
+})
+var btn322=document.createElement("button");
+btn322.setAttribute("id","button6")
+btn322.addEventListener("click",function(){
+    next22()
+})
+var i22=document.createElement("i");
+i22.setAttribute("class","fas fa-greater-than");
+btn322.append(i22);
+//document.querySelector("#bagscont").append(btn31,btn32);
+document.querySelector("#bagscont1").append(btn311,btn322);
+
+var count12=1;
+
+function prev22(){
+    if(count12==1)
+    {
+        count12=6;
+    }
+    else if(count12==6)
+    {
+        count12=5;
+    }
+    else if(count12==5)
+    {
+        count12=count12-4;
+    }
+    console.log(count12);
+    display2();
+}
+
+function next22(){
+    if(count12==6)
+    {
+        count12=1;
+    }
+    else if(count12==1)
+    {
+        count12=5;
+    }
+    else if(count12==5)
+    {
+        count12=count12+1;
+    }
+    display2();
+    console.log(count12);
+}
+
+function display2()
+{
+    var xx0=document.querySelectorAll("#bagscont>div")[0];
+    console.log(xx1);
+    var xx1=document.querySelectorAll("#bagscont>div")[1];
+    var xx5=document.querySelectorAll("#bagscont>div")[4];
+    var xx6=document.querySelectorAll("#bagscont>div")[5];
+    var xx01=document.querySelectorAll("#bagscont1>div")[0];
+    console.log(xx1);
+    var xx11=document.querySelectorAll("#bagscont1>div")[1];
+    var xx51=document.querySelectorAll("#bagscont1>div")[4];
+    var xx61=document.querySelectorAll("#bagscont1>div")[5];
+
+
+    for(var i=0;i<3;i++)
+    {
+        if(count12==1)
+        {
+            xx0.style.display="block";
+            xx1.style.display="block";
+            xx5.style.display="none";
+            xx6.style.display="none";
+            xx01.style.display="block";
+            xx11.style.display="block";
+            xx51.style.display="none";
+            xx61.style.display="none";
+        }
+        else if(count12==5)
+        {
+            xx0.style.display="none";
+            xx1.style.display="block";
+            xx5.style.display="block";
+            xx6.style.display="none";
+            xx01.style.display="none";
+            xx11.style.display="block";
+            xx51.style.display="block";
+            xx61.style.display="none";
+        }
+        else if(count12==6)
+        {
+            xx0.style.display="none";
+            xx1.style.display="none";
+            xx5.style.display="block";
+            xx6.style.display="block";
+            xx01.style.display="none";
+            xx11.style.display="none";
+            xx51.style.display="block";
+            xx61.style.display="block";
+        }
+    }
+
+
+}
+
+    function show1()
+    {
+        document.querySelector("#showcontent").style.display="block";
+        document.getElementById("ndconatiner").style.display="none";
+        document.getElementById("returnpol").style.display="none";
+        document.getElementById("returnpol1").style.display="none";
+    }
+    function show2()
+    {
+        document.getElementById("ndconatiner").style.display="grid";
+        document.querySelector("#showcontent").style.display="none";
+        document.getElementById("returnpol").style.display="none";
+        document.getElementById("returnpol1").style.display="none";
+    }
+
+    function show3()
+    {
+        document.getElementById("returnpol").style.display="block";
+        document.querySelector("#showcontent").style.display="none";
+        document.getElementById("ndconatiner").style.display="none";
+        document.getElementById("returnpol1").style.display="none";
+    }
+
+    function show4()
+    {
+        document.getElementById("returnpol1").style.display="block";
+        document.querySelector("#showcontent").style.display="none";
+        document.getElementById("ndconatiner").style.display="none";
+        document.getElementById("returnpol").style.display="none";
+    }
+</script>
