@@ -1,9 +1,10 @@
 var subscrib=document.createElement("div");
 subscrib.innerText="SUBSCRIBE NOW";
 subscrib.style.color="#e5b95f";
-subscrib.style.fontSize="12px";
-subscrib.style.fontWeight="900"
-subscrib.style.letterSpacing="-0.5px"
+subscrib.style.fontSize="16px";
+subscrib.style.fontWeight="900";
+subscrib.style.letterSpacing="-0.5px";
+subscrib.style.padding="20px";
 subscrib.style.fontFamily="poppins";
 subscrib.style.cursor="pointer";
 subscrib.addEventListener("click",function(){
@@ -13,8 +14,9 @@ subscrib.addEventListener("click",function(){
 
 var image=document.createElement("img");
 image.setAttribute("src","https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289");
-image.style.height="30px";
-image.style.width="120.56px";
+image.style.height="45px";
+image.style.width="160.56px";
+image.style.padding="20px";
 image.addEventListener("click",function(){
     window.location.href="./index.html";
 })
