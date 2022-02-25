@@ -40,7 +40,11 @@
 #searchbar{
     width:90%;
     height:70px;
+    border: transparent;
 
+}
+#searchbar:focus{
+    outline: none;
 }
 #searchbar[placeholder]{
     font-size: 35px;
@@ -49,6 +53,7 @@
     border: none;
     /* border-bottom: 1px solid black; */
 }
+
 
 #filteredres{
     /* display: grid;
@@ -64,6 +69,11 @@
     left:5%;
     top:50%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.filbox:hover{
+    color:#e5b95f;
+
 }
 #box>i{
     padding-right: 10px;

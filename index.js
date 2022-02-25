@@ -5,8 +5,9 @@ subscrib.style.fontSize="12px";
 subscrib.style.fontWeight="900"
 subscrib.style.letterSpacing="-0.5px"
 subscrib.style.fontFamily="poppins";
+subscrib.style.cursor="pointer";
 subscrib.addEventListener("click",function(){
-    subscribe()
+    window.location.href="https://www.fabbag.com/products/subscribe?variant=39697212768302";
 })
 
 
@@ -14,6 +15,9 @@ var image=document.createElement("img");
 image.setAttribute("src","https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289");
 image.style.height="30px";
 image.style.width="120.56px";
+image.addEventListener("click",function(){
+    window.location.href="./index.html";
+})
 
 
 var box=document.createElement("div");
@@ -405,6 +409,11 @@ function displayfil(latestdat)
         var filbox=document.createElement("div");
         filbox.style.display="flex";
         filbox.style.justifyContent="space-between";
+        filbox.style.cursor="pointer";
+        filbox.setAttribute("class","filbox")
+        filbox.addEventListener("click",function(){
+            openpdp(elem)
+        })
         var photo=document.createElement("img");
         photo.setAttribute("src",elem.imgUrl);
         photo.style.width="35px";
@@ -426,6 +435,43 @@ function displayfil(latestdat)
         document.getElementById("filteredres").append(filbox)
 
     })
+}
+
+var pdparr=JSON.parse(localStorage.getItem("mypdp"))||[];
+function openpdp(ele)
+{
+    // if(ele.name=="Jan'22 Beauty Resolution Fab Bag")
+    // {
+    //   // window.open("https://www.fabbag.com/collections/previous-bags/products/the-beauty-resolution-january-fab-bag?_pos=1&_sid=c70ed5799&_ss=r")
+    //   window.location.href="https://www.fabbag.com/collections/previous-bags/products/the-beauty-resolution-january-fab-bag?_pos=1&_sid=c70ed5799&_ss=r"
+    // }
+    // else if(ele.name=="Dec'21 The X-Must Haves Fab Bag")
+    // {
+    //     window.location.href="https://www.fabbag.com/collections/previous-bags/products/dec21-the-x-must-haves-fab-bag?_pos=1&_sid=2fa56a3cb&_ss=r"
+    // }
+    // else if(ele.name=="Nov'21 The Diva-Li-Coius Fab Bag")
+    // {
+    //     window.location.href="https://www.fabbag.com/collections/previous-bags/products/nov21-the-diva-li-cious-fab-bag?_pos=1&_sid=3bd1ccf08&_ss=r"
+    // }
+    // else if(ele.name=="Oct'21 The Re-Treat Fab Bag")
+    // {
+    //     window.location.href="https://www.fabbag.com/collections/previous-bags/products/oct21-the-re-treat-fab-bag?_pos=1&_sid=a9cec77b8&_ss=r";
+    // }
+    // else if(ele.name=="Sep'21 The She-9-lgans Fab Bag")
+    // {
+    //     window.location.href="https://www.fabbag.com/collections/previous-bags/products/the-she-9-igans-september-fab-bag?_pos=1&_sid=28b7a5ebb&_ss=r";
+    // }
+    // else if(ele.name=="Aug'21 The Lash & Line Fab Bag")
+    // {
+    //     window.location.href="https://www.fabbag.com/collections/previous-bags/products/the-lash-line-august-fab-bag?_pos=1&_sid=2ffda6b52&_ss=r&variant=39457528152110";
+    // }
+    // else if(ele.name=="The Colour Me Cupid February Fab Bag")
+    // {
+    //     window.location.href="https://www.fabbag.com/products/subscribe?_pos=1&_sid=5d0648e9a&_ss=r&variant=39697212768302";
+    // }
+    pdparr.push(ele);
+    localStorage.setItem("mypdp",JSON.stringify(pdparr));
+    window.location.href="./searchpdp.html";
 }
 
 
@@ -451,7 +497,7 @@ var data1 = [
         qty:1,
     },{
         imgUrl:"https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPageBanner--Skincare-Reveal-4_1.gif?v=1636696484",
-        name:"Nov'21 The Diva-Li-coius Fab Bag",
+        name:"Nov'21 The Diva-Li-Coius Fab Bag",
         
         strikedOffPrice:"Rs 1797.00",
         price:"from Rs.599.00",
