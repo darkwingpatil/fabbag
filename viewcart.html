@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rowdies:wght@300&display=swap" rel="stylesheet">
     <style>
     #navbar{
     height:50px;
@@ -14,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
 }
 #box>i{
     padding-right:20px;
@@ -23,7 +27,6 @@
 #fatherdiv{
     width:50%;
     margin-left:200px;
-    position: relative;
 }
 #header{
     margin-top: 50px;
@@ -35,7 +38,16 @@
     font-size: 12px;
 }
 #totalagain{
-    
+    width:350px;
+    height:150px;
+    border:1px solid red;
+    background-color: #f7f7f7;
+    z-index: 1;
+    position: absolute;
+    top:28%;
+    right:10%;
+    /* display: none; */
+
 }
 
     </style>
@@ -55,7 +67,9 @@
 
         </div>
         <div id="totalagain">
-
+            <h4 style="font-family: 'Open Sans', sans-serif;
+            font-family: 'Rowdies', cursive; font-size: 16px;">Total Price:</h4>
+            <div id="totalcartval"></div>
         </div>
     </div>
 </body>
@@ -140,10 +154,17 @@ function displaycart()
         var qunty=document.createElement("input");
         // qunty.innerText="Qty:"+ele.qty;
         qunty.placeholder=ele.qty;
-        qunty.style.textAlign="center"
+        qunty.type="number";
+        qunty.style.textAlign="center";
+        qunty.setAttribute("id","searchvalue")
         qunty.addEventListener("keyup",function(){
-            myquntval();
+           var outee= Number(qunty.value)
+            mycarttotal11(outee,ele.price)
         })
+        // qunty.addEventListener("keydown",function(){
+        //    var outee= (Number(qunty.value) *-1)
+        //     mycarttotal11(outee)
+        // })
         qunty.style.height="30px";
         qunty.style.width="60px";
         qunty.style.fontSize="15px";
@@ -160,9 +181,40 @@ function displaycart()
         box33.style.justifyContent="space-between"
         document.getElementById("addingtocart").append(box33,line);
         //console.log("hello")
+        mycarttotal11()
 
 
     })
 }
+var count=0;
+function mycarttotal11(outee,price)
+{
+    console.log(outee,price)
+    if(outee==undefined || price==undefined)
+    {
+    var totalval1=cartarrpge.reduce(function(abs,ele,ind,arr){
+        return abs+(cartarrpge[ind].price * (cartarrpge[ind].qty));
+    },0)
+ //   console.log(totalval1)
+    document.getElementById("totalcartval").innerHTML="Rs."+totalval1;
+}
+else if(outee!=undefined && price!=undefined){
+    var x=(outee-1) * price;
+    console.log(x);
+    var totalval1=cartarrpge.reduce(function(abs,ele,ind,arr){
+        return abs+((cartarrpge[ind].price+x) * (cartarrpge[ind].qty));
+    },0)
+    document.getElementById("totalcartval").innerHTML="Rs."+totalval1;
+}
+count++;
+console.log(count)
+if(count==7)
+{
+    window.location.reload();
+    count=0;
+}
+}
+
+//mycarttotal11()
 displaycart();
 </script>
