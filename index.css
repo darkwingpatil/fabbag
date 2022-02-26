@@ -86,7 +86,7 @@ img{
     cursor: pointer;
 }
 
-#addingtocart{
+#allcartdiv{
     position: absolute;
     top:0%;
     right:0%;
@@ -97,6 +97,38 @@ img{
     background: white;
     z-index: 1;
     border: 1px solid red;
+}
+#topporcart
+{
+    height:80px;
+    width:300px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#topporcart>p:last-child{
+    cursor: pointer;
+}
+.cartp{
+    font-size: 20px;
+}
+
+#caltotalcart{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width:300px;
+    padding-bottom:15px;
+    border: 1px solid #a1a7b6;
+}
+#totalcartval{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 11%;
+    margin-right: 5%;
+    color: #c7b299;
 }
 #allimg{
 

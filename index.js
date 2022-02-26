@@ -92,14 +92,14 @@ function prvbut()
 function display()
 {
     var val=document.querySelectorAll("#allimg > div");
-    console.log(val.length)
+    //console.log(val.length)
 
     for(var i=0;i<val.length;i++)
     {
         if(i+1==count)
         {
             val[i].style.display="block";
-            console.log(val[i])
+            //console.log(val[i])
         }
         else
         {
@@ -498,15 +498,26 @@ function addtocart(ele)
             output22=data1[i];
         }
     }
-    console.log(output22);
-    cartarr.push(output22)
-    console.log(cartarr)
+   // console.log(output22);
+
+     for(j=0;j<cartarr.length;j++)
+     {
+        if(cartarr[j].name==output22.name)
+        {
+            output22.qty++;
+        }
+     }
+     if(output22.qty==1)
+     {
+        cartarr.push(output22);
+     }
     localStorage.setItem("thismycart",JSON.stringify(cartarr));
-    displaycart()
+    displaycart(cartarr)
 }
 
 function displaycart()
 {
+    document.getElementById("addingtocart").innerHTML="";
     cartarr.map(function(ele,ind,arr){
         var box33=document.createElement("div");
         var box331=document.createElement("div");
@@ -533,13 +544,22 @@ function displaycart()
         box33.append(box331,box332)
         box33.style.display="flex";
         document.getElementById("addingtocart").append(box33);
-        console.log("hello")
+        //console.log("hello")
+
+        mycarttotal11(ele)
 
     })
 }
 //creating a local storage of all products
 
-
+function mycarttotal11()
+{
+    var totalval1=cartarr.reduce(function(abs,ele,ind,arr){
+        return abs+(cartarr[ind].price * cartarr[ind].qty);
+    },0)
+ //   console.log(totalval1)
+    document.getElementById("totalcartval").innerHTML="Rs."+totalval1;
+}
 
 var data1 = [
     {
