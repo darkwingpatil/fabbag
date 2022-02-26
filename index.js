@@ -33,8 +33,9 @@ i1.addEventListener("click",function(){
 box.append(i1)
 var i2=document.createElement("i");
 i2.setAttribute("class","far fa-heart");
+i2.style.cursor="pointer";
 i2.addEventListener("click",function(){
-    wishlist()
+    window.location.href="https://www.fabbag.com/pages/wish-list";
 })
 box.append(i2)
 var i3=document.createElement("i");
