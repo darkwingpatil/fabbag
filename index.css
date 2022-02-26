@@ -91,12 +91,11 @@ img{
     top:0%;
     right:0%;
     display: block;
-    /* display: none; */
-    height:750px;
+    display: none; 
+    height:800px;
     width:300px;
     background: white;
     z-index: 1;
-    border: 1px solid red;
 }
 #topporcart
 {

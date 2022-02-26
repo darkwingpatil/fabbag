@@ -47,7 +47,8 @@ var i4=document.createElement("i");
 i4.setAttribute("class","fas fa-shopping-cart");
 box.append(i4)
 i4.addEventListener("click",function(){
-    addtocart11()
+    // addtocart111()
+    document.getElementById("allcartdiv").style.display="block";
 })
 
 document.getElementById("navbar").append(subscrib,image,box)
@@ -549,6 +550,10 @@ function displaycart()
         mycarttotal11(ele)
 
     })
+}
+
+function closecartbar(){
+    document.getElementById("allcartdiv").style.display="none";
 }
 //creating a local storage of all products
 
