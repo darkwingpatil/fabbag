@@ -40,14 +40,55 @@
 #totalagain{
     width:350px;
     height:150px;
-    border:1px solid red;
     background-color: #f7f7f7;
     z-index: 1;
     position: absolute;
     top:28%;
-    right:10%;
+    right:5%;
+    /* display: flex; */
+    padding: 10px;
+    /* justify-content:space-between; */
     /* display: none; */
 
+}
+#totalagainson{
+    display: flex;
+    justify-content: space-between;
+}
+#totalcartval{
+    font-size: 16px;
+    position: absolute;
+    right:0%;
+    top:15%;
+    padding: 10px;
+    font-weight: 900;
+}
+#updatecart{
+    height: 30px;
+    width:300px;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 8px; 
+    color: white;
+    background: black;
+    margin: auto;
+}
+#updatecart:hover{
+    background:#e5b95f ;
+}
+#checkout{
+    height: 30px;
+    width:300px;
+    text-align: center;
+    padding-top: 8px; 
+    color: white;
+    background:#e5b95f;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#checkout:hover{
+    background: black;
 }
 
     </style>
@@ -67,9 +108,12 @@
 
         </div>
         <div id="totalagain">
-            <h4 style="font-family: 'Open Sans', sans-serif;
-            font-family: 'Rowdies', cursive; font-size: 16px;">Total Price:</h4>
-            <div id="totalcartval"></div>
+            <div id="totalagainson"><div><h4 style="font-family: 'Open Sans', sans-serif;
+                font-family: 'Rowdies', cursive; font-size: 16px;">Total Price:</h4></div>
+            <div id="totalcartval"></div></div>
+
+            <div id="updatecart" onclick="window.location.href='./index.html'" style="cursor:pointer">UPDATE CART</div>
+            <div id="checkout" style="cursor:pointer">CHECK OUT</div>
         </div>
     </div>
 </body>
