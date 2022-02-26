@@ -46,6 +46,7 @@ i3.addEventListener("mouseover",function(){
 var i4=document.createElement("i");
 i4.setAttribute("class","fas fa-shopping-cart");
 box.append(i4)
+i4.style.cursor="pointer";
 i4.addEventListener("click",function(){
     // addtocart111()
     document.getElementById("allcartdiv").style.display="block";
@@ -554,6 +555,11 @@ function displaycart()
 
 function closecartbar(){
     document.getElementById("allcartdiv").style.display="none";
+}
+
+function cartpageopn()
+{
+    window.location.href="./viewcart.html";
 }
 //creating a local storage of all products
 
