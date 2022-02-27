@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar">
+        </div>
+        <div id="bigersearch">
+            <div class="containersear">
+                <p id="chottap">WHAT ARE YOU LOOKING FOR?</p>
+                <input type="text" id="searchbar" onkeyup="check()" placeholder="Search product">
+                <button id="seaa" style="border:none; background:white;"><i class="fas fa-search" style="font-size:20px; padding-left:33px;;"></i></button>
+                <hr>
+            </div>
+            <button id="toclose">x</button>
+            <div id="filteredres">
+                
+            </div>
+        </div>
+        <div id="allcartdiv">
+            <div id="topporcart">
+                <p class="cartp">MY CART</p>
+                <p class="cartp" onclick="closecartbar()" >X</p>
+            </div>
+            <div id="addingtocart">
+
+            </div>
+            <div id="caltotalcart">
+                <h4 style="font-family: 'Open Sans', sans-serif;
+                font-family: 'Rowdies', cursive; font-size: 24px;">Total:</h4>
+                <div id="totalcartval"></div>
+            </div>
+            <div id="viewcart1" onclick="cartpageopn()">VIEW CART</div>
+            <div id="checkout1" onclick="window.location.href='./chkout.html'">CHECKOUT</div>
+        </div>
+
+       <div id="allimg">
+        <button id="btn2"><i class="fas fa-greater-than"></i></button>
+        <div class="a1" ><img src="https://scontent.fbom2-2.fna.fbcdn.net/v/t39.30808-6/273503477_4622546581206281_8915744868690704365_n.png?_nc_cat=106&ccb=1-5&_nc_sid=e3f864&_nc_ohc=yUOC4Hvq7jUAX9lm2z4&_nc_ht=scontent.fbom2-2.fna&oh=00_AT-KRbGUkOm_m60ZtbmwnwAVzAHWiN2KtbA8gvZc-oiM-A&oe=621A460B"/></div>
+        <div class="a1" ><img src="https://scontent.fbom2-2.fna.fbcdn.net/v/t39.30808-6/272984365_4615798651881074_7122203630436921342_n.png?_nc_cat=102&ccb=1-5&_nc_sid=e3f864&_nc_ohc=WVV0VnfNRqUAX-8SStO&_nc_ht=scontent.fbom2-2.fna&oh=00_AT94y1G0-ecxQpylw_MYVQ7nUhbHLaOTb__XVtfbKYlW7A&oe=6219CC41"/></div>
+        <div class="a1" ><img src="https://scontent.fbom2-2.fna.fbcdn.net/v/t39.30808-6/272261979_4609851432475796_6947200319749593831_n.png?_nc_cat=102&ccb=1-5&_nc_sid=e3f864&_nc_ohc=g27ew3sAzlwAX8ugeXP&_nc_ht=scontent.fbom2-2.fna&oh=00_AT9cHT9hgqpbUSt1rf9hXeDWQVKiGUDXCA83PtuenQLLLA&oe=621A0C8C"/></div>
+        <div class="a1" ><img src="https://scontent.fbom2-2.fna.fbcdn.net/v/t39.30808-6/272179739_4603030666491206_3036397041808020051_n.png?_nc_cat=102&ccb=1-5&_nc_sid=e3f864&_nc_ohc=43xtzpwGvD4AX9T6TYz&_nc_ht=scontent.fbom2-2.fna&oh=00_AT9evYITtbc7jMYaBh2i_rY7nhq2EwhisLdgajMwcajxYw&oe=621ABF66"/></div>
+        <button id="btn1"><i class="fas fa-less-than"></i>
+    </div>
+    <div class="bag">
+        <h3 style="padding-top:100px">WHAT'S IN THE BAG</h3>
+    </div>
+    <div id="istconatiner" style="padding-top:50px">
+
+    </div>
+    <div>
+        <h3 style="padding-top:150px">SUBSCRIPTION</h3>
+    </div>
+    <div id="ndconatiner" style="padding-top:50px">
+        <div>
+            <p>1 MONTH</p>
+            <p>SUBSCRIPTION</p>
+        </div>
+        <div>
+            <p>3 MONTH</p>
+            <p>SUBSCRIPTION</p>
+        </div>
+        <div>
+            <p>6 MONTH</p>
+            <p>SUBSCRIPTION</p>
+        </div>
+        <div>
+            <p>RS 399.00</p>
+            <p>/ Per month</p>
+        </div>
+        <div>
+            <p>RS 533.00</p>
+            <p>/ Per month</p>
+        </div>
+        <div> 
+            <p>RS 483.00</p>
+            <p>/ Per month</p>
+        </div>
+        <div>
+            <p>ONE TIME PAYMENT</p>
+            <p>RS 599.00</p>
+        </div>
+        <div>
+            <p>ONE TIME PAYMENT(11% OFF)</p>
+            <div class="strike">
+                <p>RS 1,599.00</p>
+                <p>Rs 1,797</p>
+            </div>   
+        </div>
+        <div>
+            <p>ONE TIME PAYMENT(19% OFF)</p>
+            <div class="strike">
+                <p>RS 2,899.00</p>
+                <p>Rs 3,594</p>
+            </div>
+            <hr>
+            <div style="display:flex;justify-content: space-around;">
+                <p style="padding:0 50px">image</p>
+                <p style="color:red">SIGNUP BONUS</p>
+                <p style="font-size:small;padding-top:3%;">Free</p>
+            </div>
+        </div>
+        <div class="last"><button class="lwbtn">ADD TO CART</button></div>
+        <div class="last"><button class="lwbtn">ADD TO CART</button></div>
+        <div class="last" style="height:60px;"><button class="lwbtn">ADD TO CART</button></div>
+    </div>
+    <div id="late">
+        <h3>PREVIOUS BAGS</h3>
+    </div>
+    <div>
+        <div id="bagscont">
+            
+        </div>
+    </div>
+
+     <!-- harapriya -->
+    
+   <div id="stcon">
+    <div id="fstcon" style="cursor:pointer">
+        <div>Languages:</div>
+        <div>En</div>
+        <div id="opn">Fr</div>
+    </div>
+    <div style="cursor:pointer" onclick="window.location.href='./chkout.html'">Checkout</div>
+    <div style="cursor:pointer" onclick="window.location.href='./login.html'">Sign In</div>
+    <div style="cursor:pointer" onclick="window.location.href='./signup.html'">Create Account</div>
+</div>
+
+<!-- jenny box -->
+<div id="allimg1">
+    <h3>TESTIMONIALS </h3>
+    <u class="line"></u>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="quotes" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M96 224C84.72 224 74.05 226.3 64 229.9V224c0-35.3 28.7-64 64-64c17.67 0 32-14.33 32-32S145.7 96 128 96C57.42 96 0 153.4 0 224v96c0 53.02 42.98 96 96 96s96-42.98 96-96S149 224 96 224zM352 224c-11.28 0-21.95 2.305-32 5.879V224c0-35.3 28.7-64 64-64c17.67 0 32-14.33 32-32s-14.33-32-32-32c-70.58 0-128 57.42-128 128v96c0 53.02 42.98 96 96 96s96-42.98 96-96S405 224 352 224z"/></svg>
+    <div class="a1"><p>I love each and every Fab Bag that I receive each month past three years. I am so much in love with fab bags and all the lovely<br> products and cute little pouches that I get. I love Fab Bag.</p>
+        <div><h4>-Munira</h4></div>
+    </div>
+    <div class="a1"><p>I've been a regular Fab Bag subscriber for many years now and I must say that the Fab Bag team comes up with something or the<br> other as a special attraction in the bag every month.  As always, thank you Fab Bag for making my day with this bag!!!</p>
+        <div><h4>-Poonam</h4></div> 
+    </div>
+    <div class="a1"><p>The products are amazing and I am just in love with the bag! Kudos to you team!
+    </p>
+    <div><h4>-Nirajana</h4></div>
+</div>
+    <div class="a1"><p>I like the fact that they offer high-quality products. Every single product from the bag stands out.<br> It is a Must Try for every girl out there.</p>
+        <div><h4>-Sikha</h4></div>
+    </div>
+     <div class="a1"><p>
+        I am highly impressed with the idea of surprising the customers by leaving them to guess, whats inside the Bag. Surprises brings<br> excitement and I am always excited to receive my Fab Bag. First of all I should say that the Bags are awesome and each time I got my<br> Fab Bag, I was really happy to find whats inside it. Really satisfied! :)
+     </p>
+     <div><h4>-Pratika</h4></div>
+    </div>
+     <div class="a1"><p>
+        This is my second month and I am already addicted. Can't wait for my third bag. It feels like someone with so much love who loves<br> pampering you. Thank you Fab bag. Amazing products Thank you with gratitude.
+     </p>
+     <div><h4>-Kirthana</h4></div>
+    </div>
+     <div class="a1"><p>
+        Who doesn't want to get pampered? And this bag is all you need when you want to show some extra love to yourself. Every other<br> product is of the best quality. And top of it doesn't burn a hole in your pocket. Every month I just wait for my bag as a small kid waits <br>for her favourite toy. This Fab Bag is an upright bliss.
+     </p>
+     <div><h4>-Anushree</h4></div>
+    
+    </div>
+     <div class="a1"><p>
+        I am getting addicted to Fab Bag's. The first one I had ordered was simply to check it out as my friend had recommended. I am no<br> someone who spends a lot of time thinking about beauty products and I am clueless when it comes to such matters. Which is why the<br> Fab Bag's are perfect for me. This August Fab Bag had everything I needed! The product curation is perfect. It's like having my own<br> personal shopper for beauty products and such pretty bags too.
+     </p>
+     <div><h4>-Saileena</h4></div>
+    
+    </div>
+
+
+
+    <button id="btn1"><i class="fas fa-less-than"></i>
+</div>
+
+<div id="header">
+    <h2>#TRENDINGNOW AT THE GOSSIP CORNER
+    </h2>
+</div>
+<div class = "parent">
+    
+    <div>
+        <img src="https://scontent.cdninstagram.com/v/t51.2885-15/274849867_1020928375191807_4228735663559757908_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=_62aE_ld6CkAX_wgCGJ&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT__9u-7nq6dPGaCSK752Ej7PvoB-3uh_A7jB1O70eCmPA&oe=6220B215" alt="">
+        
+     </div>
+
+
+    <div>
+        <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274377251_489596516021525_3573798721594155284_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=asCa7Pa_KpwAX9OGELb&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-EFmxN_Qh4x_IwbocrgKeKPFY8fTJMzIvgqOoYWX0bNw&oe=621ADE8F" alt="">
+        
+    </div>
+
+    <div>
+       <img src="https://scontent.cdninstagram.com/v/t51.2885-15/274474146_499330144880273_8143996783733698447_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=sUkr8tjbLRwAX_6jdz-&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9qE5h_C_Y2J2IwOsM7umMI_IlCHVrxTUdkoXFFDUeirA&oe=621A95AE" alt="">
+       
+    </div>
+    <div>
+        <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274611767_147845617685225_6882864002622922042_n.jpg?_nc_cat=104&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=xcCy-HuG6rMAX-c9kt3&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-3xf9RvwlOtGyc3vObbGyvMCvc2LM4RM5GfuoTLL0v5Q&oe=6220E0AF"alt="">
+        
+    </div>
+    <div>
+       <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274541884_473838060991418_3804681674832799223_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=lbRn0I5idyQAX_KKRmX&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-9NJZnGgmpzsFJYgSzTTXHplrOsPfvVJOPYAPHblyN4w&oe=62208FB6" alt="">
+
+    </div>
+    <div>
+       <img src="https://scontent.cdninstagram.com/v/t51.29350-15/274545904_921808475157887_3267425394772288032_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=-NEUD0jjrvgAX9ppY67&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-ms-DPjw_sU2IFUV6qQxkANSB3HGz4tkJStS-5h-w4Cw&oe=62215233" alt="">
+       
+    </div>
+    <div>
+        <img src="https://scontent.cdninstagram.com/v/t51.2885-15/274211251_122161763700652_4169161610417513959_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=xroWrIhuofYAX8BtJcV&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT8BStCTHD3ibz_zYiSLn4ll9n5fMQSzDiR-HaPCOUNBCQ&oe=621AC8E6" alt="">
+        
+     </div>
+     <div>
+        <img src="https://scontent.cdninstagram.com/v/t51.2885-15/274620091_527500015367226_8538540434323920033_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8ae9d6&_nc_ohc=2-ZN5sV0ZOIAX-H_HV3&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT-YgVqub-4bQ2n9FRr_jbJ2s2DKnQLPJXIonc8XCT5nxg&oe=62208424">
+     </div>
+</div>
+
+<div id = "parent1">
+    <div>
+        <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/sugar_1_160x160.jpg?v=1548837170">
+    </div>
+
+      <div id="child">
+            <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/Plum_Logo_For_Olive_and_Macadamia_Hair_Spa_Kit_160x160.png?v=1625063052" >
+        </div>
+
+
+    <div>
+        <img src="https://cdn.shopify.com/s/files/1/0052/7551/6995/files/Tru_hair_logo_160x160.png?v=1625063080">
+        
+    </div>
+
+    <div>
+       <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/WOC_Beauty_Logo_160x160.jpg?v=1602225835">
+    </div>
+
+    <div>
+        <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/Baiser_India_Logo_160x160.jpg?v=1625063066">
+        
+    </div>
+
+
+    <div>
+        <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/6256280-43d286588b4beafb0e4a423acf72a620-medium_jpg_5e3480ef-0e7a-4aea-88d0-c48379ad9837_160x160.jpg?v=1599290601" alt="">
+        
+    </div>
+
+    <div>
+        <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/brick-new-york-with-symbol-white_46f7f93d-9ac3-4a6b-8827-7341564c001c_160x160.png?v=1599126230">
+    </div>
+
+    <div>
+        <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/palmers-logo_33a73358-5f3d-4cd4-ac8c-ecf89a2c72b2_160x160.jpg?v=1597725541">
+    </div>
+
+    <div>
+       <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/LLW1vAyf_400x400_36a490d2-defb-4c90-898d-2af5215e8433_160x160.jpg?v=1578730298">
+    </div>
+
+    <div>
+        <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/files/719h_SoVZLL._SX466_160x160.jpg?v=1594029424">
+    </div>
+    </div>
+
+
+    
+<!-- jenny footer -->
+
+
+<footer>
+    <div class="content">
+        <div class="top">
+            <div class="logo-details">
+                <i class="fab fa-slack"></i>
+                <span class="logo_name">CodingLab</span>
+            </div>
+
+        </div>
+        <div class="link-boxes">
+            <ul class="box">
+                <p class="info title1">INFORMATION</p>
+                <li><a href="https://www.fabbag.com/pages/about-us" class="hovereff" target="_blank">
+                        <p class="info">About Us</p>
+                    </a>
+                </li>
+                <li><a href="https://www.fabbag.com/pages/associated-brands">
+                        <p class="info">
+                            <p class="info">Associated Brands</p>
+                    </a></li>
+                <li><a href="https://www.fabbag.com/pages/faq">
+                        <p class="info">FAQ</p>
+                    </a></li>
+                <li><a href="https://www.fabbag.com/pages/collaborate-with-fab-bag">
+                        <p class="info">Collaborate with Fab Bag</p>
+                    </a>
+                </li>
+                <li><a href="https://www.fabbag.com/pages/contact-us">
+                        <p class="info">Contact Us</p>
+                    </a></li>
+                <li><a href="https://www.fabbag.com/pages/returns-and-refunds">
+                        <p class="info">Return & Refunds</p>
+                    </a></li>
+                <li><a href="https://www.fabbag.com/pages/terms-and-conditions">
+                        <p class="info">Terms & Conditions</p>
+                    </a></li>
+                <li><a href="https://www.fabbag.com/pages/privacy-policy">
+                        <p class="info">Privacy Policy</p>
+                    </a></li>
+
+
+            </ul>
+            <ul class="box">
+                <p class="info title1">CUSTOMER CARE</p>
+                <li class="link_name">
+                    <p class="info">Call: 022-6805-6010</p></a>
+                </li>
+                <li><a href="#">
+                        <p class="info">(Monday to Friday: 9 AM - 7 PM)</p>
+                    </a></li>
+                <li><a href="https://www.gmail.com">
+                        <p class="info">Mail:crew@fabbag.com</p>
+                    </a></li>
+            </ul>
+            <ul class="box input-box">
+                <p class="info title1">NEWSLETTER</p>
+                <li class="link_name">
+                    
+                </li>
+                <li><a href="#">
+                        <p class="info">signup for the latest offers,updates and news</p>
+                    </a></li>
+                <li class="link_name">SUBSCRIBE</li>
+                <form>
+                    <input type="text" placeholder="your email address">
+                    <input type="button" class="try" value="SUBSCRIBE">
+                </form>
+
+            </ul>
+            <ul class="box ">
+
+            </ul>
+        </div>
+    </div>
+    
+    <div class="bottom-details">
+        <div class="bottom_text">
+            <div class="footericon">
+                <div class="media-icons">
+                    <a href="https://www.facebook.com/fabbag" class="facebook1"><i class="fab fa-facebook-f icon"></i></a>
+                    <a href="https://twitter.com/thefabbag" class="twitter1"><i class="fab fa-twitter icon"></i></a>
+                    <a href="https://www.instagram.com/thefabbag/" class="insta1"><i class="fab fa-instagram icon"></i></a>
+                    <a href="https://www.youtube.com/fabbag" class="youtube1"><i class="fab fa-youtube icon"></i></a>
+                </div>
+                <div class="ftext">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script src="./index.js"></script>
+
+
