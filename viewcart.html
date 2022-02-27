@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rowdies:wght@300&display=swap" rel="stylesheet">
+    <style>
+    #navbar{
+    height:50px;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+}
+#box>i{
+    padding-right:20px;
+    font-size: medium;
+    color: #e5b95f;
+}
+#fatherdiv{
+    width:50%;
+    margin-left:200px;
+}
+#header{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+#header>p{
+    font-weight: bold;
+    font-size: 12px;
+}
+#totalagain{
+    width:350px;
+    height:150px;
+    background-color: #f7f7f7;
+    z-index: 1;
+    position: absolute;
+    top:28%;
+    right:5%;
+    /* display: flex; */
+    padding: 10px;
+    /* justify-content:space-between; */
+    /* display: none; */
+
+}
+#totalagainson{
+    display: flex;
+    justify-content: space-between;
+}
+#totalcartval{
+    font-size: 16px;
+    position: absolute;
+    right:0%;
+    top:15%;
+    padding: 10px;
+    font-weight: 900;
+}
+#updatecart{
+    height: 30px;
+    width:300px;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 8px; 
+    color: white;
+    background: black;
+    margin: auto;
+}
+#updatecart:hover{
+    background:#e5b95f ;
+}
+#checkout{
+    height: 30px;
+    width:300px;
+    text-align: center;
+    padding-top: 8px; 
+    color: white;
+    background:#e5b95f;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#checkout:hover{
+    background: black;
+}
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+    </div>
+    <div id="fatherdiv">
+        <h2 style="margin-top:50px">My Cart</h2>
+        <div id="header">
+            <p style="margin-right:430px">PRODUCT</p>
+            <P>QTY</P>
+            <p style="margin-right:0px">PRICE</p>
+        </div>
+        <hr style="color:silver">
+        <div id="addingtocart">
+
+        </div>
+        <div id="totalagain">
+            <div id="totalagainson"><div><h4 style="font-family: 'Open Sans', sans-serif;
+                font-family: 'Rowdies', cursive; font-size: 16px;">Total Price:</h4></div>
+            <div id="totalcartval"></div></div>
+
+            <div id="updatecart" onclick="window.location.href='./index.html'" style="cursor:pointer">UPDATE CART</div>
+            <div id="checkout" style="cursor:pointer" onclick="window.location.href='./chkout.html'" >CHECK OUT</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+var subscrib=document.createElement("div");
+subscrib.innerText="SUBSCRIBE NOW";
+subscrib.style.color="#e5b95f";
+subscrib.style.fontSize="16px";
+subscrib.style.fontWeight="900";
+subscrib.style.letterSpacing="-0.5px";
+subscrib.style.padding="20px";
+subscrib.style.fontFamily="poppins";
+subscrib.style.cursor="pointer";
+subscrib.addEventListener("click",function(){
+    window.location.href="https://www.fabbag.com/products/subscribe?variant=39697212768302";
+})
+
+
+var image=document.createElement("img");
+image.setAttribute("src","https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289");
+image.style.height="45px";
+image.style.width="160.56px";
+image.style.padding="20px";
+image.addEventListener("click",function(){
+    window.location.href="./index.html";
+})
+
+
+var box=document.createElement("div");
+box.setAttribute("id","box")
+var i1=document.createElement("i");
+i1.setAttribute("class","fas fa-search");
+i1.style.cursor="pointer";
+i1.addEventListener("click",function(){
+    search()
+})
+box.append(i1)
+var i2=document.createElement("i");
+i2.setAttribute("class","far fa-heart");
+i2.addEventListener("click",function(){
+    wishlist()
+})
+box.append(i2)
+var i3=document.createElement("i");
+i3.setAttribute("class","far fa-user-circle");
+box.append(i3)
+i3.addEventListener("mouseover",function(){
+    dropdown()
+})
+var i4=document.createElement("i");
+i4.setAttribute("class","fas fa-shopping-cart");
+box.append(i4)
+i4.style.cursor="pointer";
+i4.addEventListener("click",function(){
+    // addtocart111()
+    document.getElementById("allcartdiv").style.display="block";
+})
+
+document.getElementById("navbar").append(subscrib,image,box)
+
+var cartarrpge=JSON.parse(localStorage.getItem("thismycart"));
+
+function displaycart()
+{
+   // document.getElementById("addingtocart").innerHTML="";
+    cartarrpge.map(function(ele,ind,arr){
+        var box33=document.createElement("div");
+        var box331=document.createElement("div");
+        var img33=document.createElement("img");
+        img33.setAttribute("src",ele.imgUrl);
+        img33.style.width="155px";
+        img33.style.height="105px";
+        img33.style.padding="8px";
+        box331.append(img33);
+        var box332=document.createElement("div");
+        var name= document.createElement("p");
+        name.innerText=ele.name;
+        name.style.fontSize="15px";
+        box332.append(name)
+        var box333=document.createElement("div");
+        var qunty=document.createElement("input");
+        // qunty.innerText="Qty:"+ele.qty;
+        qunty.placeholder=ele.qty;
+        qunty.type="number";
+        qunty.style.textAlign="center";
+        qunty.setAttribute("id","searchvalue")
+        qunty.addEventListener("keyup",function(){
+           var outee= Number(qunty.value)
+            mycarttotal11(outee,ele.price)
+        })
+        // qunty.addEventListener("keydown",function(){
+        //    var outee= (Number(qunty.value) *-1)
+        //     mycarttotal11(outee)
+        // })
+        qunty.style.height="30px";
+        qunty.style.width="60px";
+        qunty.style.fontSize="15px";
+        box333.append(qunty);
+        var box444=document.createElement("div");
+        var price=document.createElement("p");
+        price.innerText="Rs"+ele.price;
+        price.style.fontSize="15px";
+        // qunty.style.marginRight="50px"
+        box444.append(price);
+        var line=document.createElement("hr");
+        box33.append(box331,box332,box333,box444)
+        box33.style.display="flex";
+        box33.style.justifyContent="space-between"
+        document.getElementById("addingtocart").append(box33,line);
+        //console.log("hello")
+        mycarttotal11()
+
+
+    })
+}
+var count=0;
+function mycarttotal11(outee,price)
+{
+    console.log(outee,price)
+    if(outee==undefined || price==undefined)
+    {
+    var totalval1=cartarrpge.reduce(function(abs,ele,ind,arr){
+        return abs+(cartarrpge[ind].price * (cartarrpge[ind].qty));
+    },0)
+ //   console.log(totalval1)
+    document.getElementById("totalcartval").innerHTML="Rs."+totalval1;
+}
+else if(outee!=undefined && price!=undefined){
+    var x=(outee-1) * price;
+    console.log(x);
+    var totalval1=cartarrpge.reduce(function(abs,ele,ind,arr){
+        return abs+((cartarrpge[ind].price+x) * (cartarrpge[ind].qty));
+    },0)
+    document.getElementById("totalcartval").innerHTML="Rs."+totalval1;
+}
+count++;
+console.log(count)
+if(count==7)
+{
+    window.location.reload();
+    count=0;
+}
+}
+
+//mycarttotal11()
+displaycart();
+</script>
