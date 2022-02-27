@@ -11,6 +11,7 @@ subscrib.addEventListener("click",function(){
 
 
 var image=document.createElement("img");
+image.setAttribute("id","imagesetting")
 image.setAttribute("src","https://cdn.shopify.com/s/files/1/0052/7551/6995/files/FABBAG-LOGO_96ac9306-4c81-4ab8-8d2b-4e818eed7f76_2048x.png?v=1606482289");
 image.style.height="30px";
 image.style.width="120.56px";
