@@ -1,6 +1,6 @@
 
 
-## fabbag Clone [FagBag Clone](https://app.netlify.com/sites/superb-pasca-308568/overview) [![https://app.netlify.com/sites/superb-pasca-308568/overview](https://app.netlify.com/sites/superb-pasca-308568/overview)](https://app.netlify.com/sites/superb-pasca-308568/overview/)
+## fabbag Clone [FagBag Clone](https://lively-meerkat-9f9e75.netlify.app/) [![https://lively-meerkat-9f9e75.netlify.app/](https://app.netlify.com/sites/superb-pasca-308568/overview)](https://app.netlify.com/sites/superb-pasca-308568/overview/)
 FabBag is an cosmatics related website where we can get exclusive beauty products, We tried core functionalities of FabBag during First Construct Week held after completition of Unit 1 in Masai.
 
 ## Technologies used :-
